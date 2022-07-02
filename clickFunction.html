@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+          
+
+        }
+        .openBtn{
+            width: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+            
+        }
+        .btn{
+            cursor: pointer;
+            padding: 10px 25px;
+            background-color: rgb(107, 180, 199);
+            border-radius: 5px;
+            border:none ;
+            outline: none;
+           
+        }
+        .form{
+           position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 500px;
+            border: 1px solid black;
+            text-align: center;
+           display: none;
+           box-shadow: 1rem 1rem 2rem 0.7px rgba(0, 0, 0, 0,2);
+           background-color: #fff;
+           transition: 0.1s ease-in-out;
+
+        }
+      .show{
+          display: inline;
+          transition: .4s;
+
+      }
+      .close{
+        display: none;
+        opacity: none;
+      }
+      .closeBtn{
+        cursor: pointer;
+            padding: 10px 25px;
+            background-color: rgb(107, 180, 199);
+            border-radius: 5px;
+            border:none ;
+            outline: none;
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="openBtn">
+            <button class="btn">Open</button>
+        </div>
+        <div class="form">
+           <h2>Modal</h2>
+           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem magnam, obcaecati optio dolorem at quia ex aliquid nemo eos, repellendus, soluta explicabo? Perspiciatis cumque autem soluta culpa incidunt perferendis voluptate?lorm20.
+           </p>
+           <button class="closeBtn">Close</button>
+        </div>
+    </div>
+    <script>
+        let btn=document.querySelector('.btn');
+        let form=document.querySelector('.form');
+         let closeBtn=document.querySelector('.closeBtn')
+
+       btn.addEventListener('click',()=>{
+         form.classList.add('show');
+       });
+
+       closeBtn.addEventListener('click',()=>{
+         form.classList.remove('show');
+       });
+    </script>
+</body>
+</html>

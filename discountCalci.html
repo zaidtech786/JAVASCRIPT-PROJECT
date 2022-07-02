@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount calculator</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .calciContainer {
+        width: 500px;
+        height: 400px;
+        background-color: rgb(130, 179, 202);
+        display: flex;
+        flex-direction: column;
+      align-items: center;
+        justify-content: center;
+        /* line-height: 60px; */
+      }
+      .line{
+          margin-top: 40px;
+          width: 400px;
+          height: 1px;
+         background-color: black;
+      }
+      label{
+          padding: 0px 60px;
+      }
+      input{
+          border: none;
+          outline: none;
+          padding:7px ;
+          background:none;
+          /* margin-left: 40px; */
+      }
+      input::placeholder{
+          font-size: 20px;
+          color: black;
+        padding-left: 110px;
+      }
+      .discountDiv .disc{
+        padding-top: 20px;
+      }
+      .button{
+          padding:10px 25px ;
+          background-color: rgb(158, 66, 170);
+          border: none;
+          outline: none;
+          cursor: pointer;
+          border-radius: 5px;
+          margin-top: 20px;
+      }
+      .button:hover{
+          background-color: rgb(143, 119, 187);
+      }
+      .resultContainer{
+          line-height: none;
+          padding-top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calciContainer" id="calciContainer">
+      <div class="amountDiv">
+        <label>Enter the Amount</label>
+        <input type="number" class="amount" id="amountid" placeholder="₹"/>
+      </div>
+
+      <div class="discountDiv">
+        <label for="disc">Enter Discount percentage</label>
+        <input type="number" class="disc" id="disc" placeholder="%"/>
+      </div>
+
+     <div class="btn">
+         <button class="button">Get Percentage</button>
+     </div>
+
+         <h3 class="save"></h3>
+         <h3 class="price"></h3>
+    </div>
+
+
+    <script>
+       
+        let btn=document.querySelector('.button');
+
+        btn.addEventListener('click', function(e){
+            let save=document.querySelector('.save');
+            let price=document.querySelector('.price');
+            let amount=document.querySelector('.amount').value;
+            let discount=document.querySelector('.disc').value; 
+
+            console.log(amount);
+
+            save.innerHTML="You save :" + (amount*discount/100);
+            price.innerHTML="New price :" + (amount-(amount*discount/100));
+        });
+        
+    </script>
+  </body>
+</html>

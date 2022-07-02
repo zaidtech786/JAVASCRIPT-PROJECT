@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validtion</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+            padding: 30px 0px;
+        }
+        input{
+            width: 500px;
+            height: 25px;
+           margin: 10px 0px;
+        }
+        .btn{
+            width: 30%;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(95, 190, 178);
+            cursor: pointer;
+            font-size: 18px;
+           
+        }
+        span{
+            color: red;margin-top: 0;
+            padding-top:0 ;
+        }
+        .heading{
+            margin-top: 0px;
+            font-size: 4rem;
+        }
+        label{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    
+    <form onsubmit="return Formvalidate()">
+        <h1 class="heading">Form Validation</h1>
+
+        <label>Enter Username</label>
+        <input type="username" class="username"> 
+        <span class="name"></span> 
+
+          <label>Enter Password</label>
+        <input type="password" class="password">
+        <span class="pass"></span> 
+
+        <label>Confirm Password</label>
+        <input type="password" class="conpassword">
+        <span class="conpass"></span> 
+
+        <label>Mobile number</label>
+        <input type="number" class="mnumber">
+        <span class="mno"></span> 
+      
+        <button class="btn">Submit</button>
+    </form>
+
+
+    <script>
+   let username=document.querySelector('.username');
+   let password=document.querySelector('.password');
+   let conpassword=document.querySelector('.conpassword');
+   let mnumber=document.querySelector('.mnumber');
+   let submit=document.querySelector('.submit');
+
+  function Formvalidate(){
+      if(username.value==""){
+          console.log("please enter text");
+    document.querySelector('.name').innerHTML="**Please enter username";
+    return false;
+      }
+
+      else if (username.value.length<2) {
+         document.querySelector('.name').innerHTML="**username should be greater than 2";
+        console.log("**username should be greater than 2");
+        return false;
+      }
+
+      if(password.value==""){
+    document.querySelector('.pass').innerHTML="**Please enter password";
+    return false;
+      }
+
+     else if(password.value.length<8){
+    document.querySelector('.pass').innerHTML="**password must be greater than 8 character";
+    return false;
+    }
+    
+        if (password.value!=conpassword.value) {
+            document.querySelector('.conpass').innerHTML="**Password is not matched";
+            
+        }
+         else {
+            document.querySelector('.conpass').innerHTML="**Password is matched";
+            document.querySelector('.conpass').style.color="green";
+         }
+      if(conpassword.value==""){
+          console.log("please enter password");
+    document.querySelector('.conpass').innerHTML="**Please enter conFirm password Field";
+    return false;
+      }
+
+      if(mnumber.value==""){
+          console.log("please enter mnumber");
+    document.querySelector('.mno').innerHTML="**Please enter mobile number";
+    return false;
+      }
+      if(mnumber.value>10){
+    document.querySelector('.mno').innerHTML="**mobile number should be equal to 10 ";
+    return false;
+      }
+  }
+
+    </script>
+</body>
+</html>

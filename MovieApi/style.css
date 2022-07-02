@@ -1,0 +1,195 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+body{
+height: 100vh;
+width: 100%;
+background-color: rgb(42, 43, 53);
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(27, 24, 24);
+    display: flex;
+    padding-top: 6px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+    color: white;
+}
+form{
+    width: 20%;
+}
+#search{
+    /* width: 20%; */
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size:18px ;
+    margin-right: 10px;
+    border: none;
+    background-color: rgb(100, 163, 160);
+}
+#search::placeholder{
+    color: white;
+    text-align: center;
+}
+
+.btn{
+    padding: 10px 15px;
+    background-color: rgb(41, 245, 245);
+    border: none;
+    margin-right: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn:hover{
+    background-color: rgb(72, 202, 241);
+}
+.heading{
+    margin-top: 10px;
+    text-align: center;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+  width: 20%;
+  margin: 1rem;
+  background-color: rgb(99, 106, 126);
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1 );
+  position: relative;
+  overflow: hidden;
+}
+.title{
+    margin: auto;
+    text-align: center;
+}
+.rating{
+margin: 8px 10px;
+width: 20px;
+height: 20px;
+text-align: center;
+    background-color: rgb(146, 70, 70);
+    color: aquamarine;
+}
+.card img{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(230, 196, 196);
+}
+.card .content{
+display: flex;
+justify-content: space-between;
+padding:0px 10px;
+}
+/* .card-container{
+    margin: 0px 40px;
+} */
+.overview{
+    position: absolute;
+    left: 0;
+    right:0 ;
+    bottom: 0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: 0.3s ease-in;
+}
+.card:hover .overview{
+    transform: translateY(0%);
+}
+
+@media only screen and (max-width:400px){
+ header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+ }
+ #form{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+ }
+
+    .card{
+        width: 70%;
+        height: auto;
+      }
+}
+@media only screen and (max-width:600px){
+ header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+ }
+ #form{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+ }
+ #search{
+    
+ }
+
+    .card{
+        width: 70%;
+        height: auto;
+      }
+}
+
+@media only screen and (max-width:250px){
+ header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #search{
+  
+    padding: 6px 12px;
+    
+}
+ #form{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+ }
+    .card{
+        width: 70%;
+        height: auto;
+      }
+}
+@media only screen and (min-width:401px) and (max-width:600px){
+  
+    .card{
+        width: 50%; 
+         height: auto; 
+      }
+     
+    #search{
+        width: 80%;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:900px){
+     
+    #search{
+        width: 80%;
+    }
+}

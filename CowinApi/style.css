@@ -1,0 +1,452 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+   
+}
+.wrapper{
+    margin-top: 0;
+    width: 100vw;
+   height: 400px;
+    background-color: #18dcff;
+    text-align: center;
+    position: relative;
+   
+}
+.box-Wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     width: 1000px;
+   background-color: #fff;
+    border-radius:10px  ;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   top: 290px;
+}
+.image{
+    width: 100px;
+}
+.image .img{
+    width: 80px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.input{
+   width: 870px;
+   height: 30px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top:20px ;
+}
+.input::placeholder{
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 20px;
+}
+.inputDate{
+   width: 870px;
+   height: 35px;
+   margin-top: 0px;
+    border-radius:5px ;
+    text-align: center;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.submitBtn{
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #0984e3;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 80%;
+    background: #00cec9;
+
+}
+.submitBtn:hover{
+    color: #0984e3;
+    border: 1px solid 00cec9 ;
+    background: transparent;
+}
+
+.title{
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+.boxContainer{
+    margin-top: 50px;
+    padding: 0px 150px;
+    width: 90vw;
+    max-width: 1170px;
+    /* height: 100%; */
+    display: grid;
+    grid-template-columns: repeat(4,350px);
+    grid-template-rows: repeat(4,180px);
+    grid-gap: 30px;
+
+
+}
+.boxx{
+    /* width: 25rem; */
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.HosName{
+    padding-left: 10px;;
+}
+.hosAdd{
+    padding-left: 10px;
+    padding-top: 5px;
+    /* font-size: 12px; */
+}
+.price{
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    background-color: #0abde3;
+}
+.rs{
+    text-align: center;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timing{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+}
+
+
+.dateTime{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+.time{
+    /* margin: 0px 10px 0px 20px; */
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 8px;
+}
+.on{
+    text-align: center;
+    padding: 0px 10px;
+    font-weight: 500;
+}
+.date{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 8px;
+}
+.timme{
+    text-align: center;
+}
+.boxContainer{
+    width: 100%;
+    display:grid;
+    grid-template-columns: repeat(3,350px);
+}
+.vaccineInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.age{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 14px;
+}
+.vaccine{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 14px;
+}
+.dose1{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 14px;
+}
+.dose2{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 14px;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) { 
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .boxContainer {
+      grid-template-columns: repeat(1,400px);
+      justify-content: center;
+      align-items: center;
+      grid-gap: 20px;
+    }
+    .boxx {
+      width: 350px ;
+      height: auto;
+    }
+    .inputDate{
+        width: 80%;
+        height: 30px;
+        margin-top: 0px;
+         border-radius:5px ;
+         text-align: center;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1144px){
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .boxContainer {
+      grid-template-columns: repeat(2,350px);
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      grid-gap: 20px;
+    }
+    .boxx {
+      width: 350px ;
+      height: auto;
+    }
+    .inputDate{
+        width: 80%;
+        height: 30px;
+        margin-top: 0px;
+         border-radius:5px ;
+         text-align: center;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+  }
+  @media screen and (min-width: 1145px) and (max-width: 1400px){
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .boxContainer {
+      grid-template-columns: repeat(3,350px);
+      justify-content: center;
+      align-items: center;
+      grid-gap: 20px;
+    }
+    .boxx {
+      width: 350px ;
+      height: auto;
+    }
+    .inputDate{
+        width: 80%;
+        height: 30px;
+        margin-top: 0px;
+         border-radius:5px ;
+         text-align: center;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+  }
+
+@media screen and (max-width: 662px) { 
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .boxContainer {
+        grid-template-columns: repeat(1,400px);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 20px;
+    }
+    .boxx {
+      width: 350px ;
+      height: auto;
+    }
+    .inputDate{
+        width: 80%;
+        height: 30px;
+        margin-top: 0px;
+         border-radius:5px ;
+         text-align: center;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+  }
+@media screen and (max-width:530px) { 
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .boxContainer {
+        grid-template-columns: repeat(1,400px);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 20px;
+    }
+    .boxx {
+      width: 350px ;
+      height: auto;
+    }
+    .inputDate{
+        width: 80%;
+        height: 30px;
+        margin-top: 0px;
+         border-radius:5px ;
+         text-align: center;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+  }
+
+  @media screen and (max-width:350px){
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .image{
+        width: 60px;
+    }
+    .image .img{
+        width: 100%;
+    }
+    .boxContainer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,300px);
+        grid-template-rows: repeat(1,auto);
+        grid-gap: 30px;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+    .boxx{
+        /* width: 25rem; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .title{
+        font-size: 15px;
+    }
+  }
+  @media screen and (min-width:351px) and (max-width:400px){
+    .box{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+    .image{
+        width: 60px;
+    }
+    .image .img{
+        width: 100%;
+    }
+    .boxContainer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,300px);
+        grid-template-rows: repeat(1,auto);
+        grid-gap: 30px;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+    .boxx{
+        /* width: 25rem; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .title{
+        font-size: 15px;
+    }
+  }
+  
+  @media screen and (min-width:0px) and (max-width:340px){
+    .wrapper{
+        border: 1px solid #000;
+        width: 100vw;
+       height: 400px;
+        background-color: #ffa318;
+       
+    }
+    .box{
+        width: 50%;
+    }
+    .input{
+        width: 50%;
+    }
+    .image{
+        width: 40px;
+    }
+    .image .img{
+        width: 100%;
+    }
+    .boxContainer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,280px);
+        grid-template-rows: repeat(1,auto);
+        grid-gap: 30px;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+    .boxx{
+        /* width: 25rem; */
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .title{
+        font-size: 12px;
+    }
+  }
+  

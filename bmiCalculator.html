@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI calculator</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7ed6df;
+      }
+      .container {
+        width: 350px;
+        height: 300px;
+        background-color: #dfe6e9;
+        padding: 50px 40px;
+      }
+      span {
+        padding: 0px 15px;
+      }
+      input {
+        margin-bottom: 25px;
+      }
+      .btn {
+        display: block;
+        margin: auto;
+        padding: 10px 30px;
+        /* margin-top: 30px; */
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid black;
+        font-size: 18px;
+      }
+      .btn:hover {
+        border: 1px solid black;
+        background-color: rgb(103, 197, 169);
+      }
+      .result {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 20px;
+      }
+      .heading{
+          text-align: center;
+          font-size: 40px;
+          position: absolute;
+          top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+      <h1 class="heading">BMI Calculator</h1>
+    <div class="container">
+      <label>Age</label>
+      <input type="number" class="age" /> <span>Ages : 2-120</span>
+      <br />
+      Gender: <input type="radio" id="Male" name="gender" />
+      <label for="Male">Male</label>
+      <input type="radio" id="Female" name="gender" />
+      <label for="Female">Female</label>
+      <br />
+      <label>Height</label>
+      <input type="number" class="height" placeholder="m" />
+      <br />
+      <label>Weight</label>
+      <input type="number" class="weight" placeholder="kg" />
+      <br />
+      <button class="btn">calculate</button>
+      <p class="result"></p>
+    </div>
+
+    <script>
+      let btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", function () {
+        let age = document.querySelector(".age").value;
+        let male = document.querySelector("#Male");
+        let female = document.querySelector("#female");
+        let height = document.querySelector(".height").value;
+        let weight = document.querySelector(".weight").value;
+        let result = document.querySelector(".result");
+        console.log(age)
+
+        height=height*12;
+        height=height*0.025;
+        let bmi=weight / (Math.pow(height,2));
+
+        if(!Number.isInteger(bmi))
+        {
+             bmi=bmi.toFixed(2)
+        }
+
+        if(bmi<=18.5)
+            result.innerHTML="BMI :" + bmi + " Underweight";
+        
+        else if(bmi>18.5 || bmi<24.5)
+            result.innerHTML="BMI :" + bmi +" healthy weight"
+        
+        else
+            result.innerHTML="BMI :" + bmi +" Overweight"
+
+        // result.innerText="BMI : "+ bmi;
+      });
+    
+    </script>
+  </body>
+</html>

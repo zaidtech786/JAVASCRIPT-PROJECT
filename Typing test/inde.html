@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing test</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .textArea{
+        resize: none;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+</style>
+<body>
+    <h1>Typing test</h1>
+    <h2 class="textList"></h2>
+    <textarea class="textArea" cols="50" rows="20"></textarea>
+    <button class="btn">Start</button>
+    <p class="result"></p>
+
+
+    <script>
+        let array=["hello","zaid Siddiqui","Saif Siddiqui","loremIsnkfd"];
+       let textList=document.querySelector(".textList")
+        let btn=document.querySelector(".btn")
+        let res=document.querySelector(".result");
+        let textarea=document.querySelector(".textArea");
+
+
+        let random=Math.floor(Math.random()*array.length);
+        let text=array[random];
+        let startTime=new Date().getMinutes();
+
+
+        textarea.addEventListener("input",() => {
+            let data=textarea.value
+            console.log(data)
+        })
+
+        btn.addEventListener("click", () => {
+           if (btn.innerText=="Start") {
+            btn.innerText="Done";
+            textList.innerHTML=text
+
+            // textarea.disabled="false"
+           }
+           else if(btn.innerText=="Done"){
+            btn.innerText="Start";
+            textarea.disabled=true;
+            textList.innerHTML=""
+           }
+        })
+    </script>
+</body>
+</html>

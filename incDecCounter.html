@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d69f7b;
+    }
+    .counter{
+        text-align: center;
+    }
+    .counter h1{
+        font-size: 5rem;
+    }
+    .btn{
+        padding: 6px 15px;
+        border: 1px solid rgb(73, 189, 197);
+        margin: 0px 5px;
+        cursor: pointer;
+        border-radius: 6px;
+        outline: none;
+    }
+    .btn:hover{
+        background-color:black;
+        border: 1px solid rgb(49, 159, 223);
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="counter">
+            <h1 class="value">0</h1>
+        </div>
+        <div class="btn-container">
+          <button class="btn inc">Increment</button>
+          <button class="btn dec">Decrement</button>
+          <button class="btn reset">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let counter=document.querySelector('.value');
+        let btns=document.querySelectorAll('.btn');
+        let count=0;
+
+
+        // btns.forEach(function(btn)  {
+        //     btn.addEventListener('click' , function(e){
+        //       console.log(e.currentTarget.classList);
+        //       let styles=e.currentTarget.classList;
+        //      if (styles.contains('inc')) {
+        //          counter.innerHTML=count++;
+        //      }
+        //      else if (styles.contains('dec')) {
+        //         counter.innerHTML=count--;
+        //      }
+        //      else{
+        //         counter.innerHTML= count=0;
+        //      }
+        //     })
+        // });
+
+
+        btns.forEach( (btn) => {
+            btn.addEventListener("click",(e)=>{
+              let data=e.target.classList;
+              if (data.contains("inc")) {
+                counter.innerHTML=count++;
+              }
+              else if(data.contains("dec")){
+                counter.innerHTML=count--;
+              }
+              else{
+                counter.innerHTML= count=0;
+              }
+            })
+        })
+
+        
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background changer</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            padding: 10px 25px;
+            background-color: rgb(56, 165, 168);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">click me</button>
+
+    <script>
+        const body=document.querySelector('body')
+        let btn=document.querySelector('.btn');
+        let bgColors=['pink','yellow','red','blue','black','grey','violet',"purple","imperial purple","lemon chiffon","apricot","sea-green","warm camel"];
+        
+        btn.addEventListener('click',function(){
+            let colors=Math.round(Math.random()*bgColors.length);
+       body.style.backgroundColor=bgColors[colors];
+        });
+    </script>
+</body>
+</html>

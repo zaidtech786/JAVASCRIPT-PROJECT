@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+           margin: 0;
+           padding:0 ;
+       }
+       body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+       }
+       .container{
+        display: flex;
+        flex-direction: column;
+        
+       }
+       .input{
+           padding: 10px;
+           
+          
+       }
+       .btn{
+           margin-top: 15px;
+           padding: 10px ;
+           background-color: rgb(193, 218, 82);
+           border: none;
+           outline: none;
+           cursor: pointer;
+           font-size: 15px;
+           border-radius: 5px;
+       }
+       .result{
+           margin-top: 10px;
+           font-size:20px ;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" class="input" placeholder="Enter a number">
+        <button class="btn">Even/odd</button>
+        <p class="result"></p>
+    </div>
+
+    <script>
+        let number=document.querySelector('.input').value;
+        let btn=document.querySelector('.btn');
+        let result=document.querySelector('.result');
+
+        btn.addEventListener('click',function(){
+            if(number == ""){
+                return result.innerHTML="Please enter valid number ";
+            }
+            if (number%2==0) {
+                return result.innerHTML=number +" is Even ";
+            }
+            else{
+                return result.innerHTML= number + " is odd ";
+            }
+        })
+
+    </script>
+</body>
+</html>

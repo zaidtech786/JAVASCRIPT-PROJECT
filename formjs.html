@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+    }
+    .button{
+        display: inline;
+    }
+    form{
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: flex-start;
+        background-color: rgb(196, 231, 243);
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+        position: relative;
+        border-radius: 7px;
+    }
+    label{
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-weight: 600;
+    }
+    .btn{
+        position: absolute;
+        top: 155px;
+        cursor: pointer;
+        right: 40px;
+        border: none;
+        outline: none;
+        color: red;
+    }
+    .btn:hover{
+        color: rgb(221, 127, 166);
+    }
+    .input{
+        padding: 10px 30px;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        /* margin-bottom: 14px; */
+    
+    }
+    .input:focus{
+        border: 1px solid  rgb(79, 204, 194) ;
+    }
+    .submit{
+        padding: 7px 30px ;
+        border: none;
+        outline: none;
+        border-radius: 7px;
+        background-color: rgb(98, 228, 217);
+        cursor: pointer;
+        margin-top:15px;
+    }
+    /* .suggestion{
+        margin-right: 50px;
+        display: none;
+    } */
+    .password{
+       
+    }
+    .submit:hover{
+        background: transparent;
+        transition: .2s;
+        border: 1px solid rgb(79, 204, 194);
+    }
+</style>
+<body>
+   <div class="container">
+    <form action="#" >
+        <label for="email">Enter email</label>
+        <input type="email" class="input email"  placeholder="Email" required>
+        <p class="EmerrMsg">zaid</p>
+        <label for="password">Enter Password</label>
+        <input type="password" class="input password" placeholder="Password">
+        <p class="PasserrMsg"></p>
+        <button class="btn">  <i class="fa-solid fa-eye-slash"></i></button>
+        <button class="submit">Submit</button>
+    </form>
+   </div>
+</body>
+
+
+<script>
+    let btn=document.querySelector(".btn");
+    let submitBtn=document.querySelector(".submit");
+    let input=document.querySelector(".password").value;
+   
+    let email=document.querySelector(".email");
+    let emailerrMsg=document.querySelector(".EmerrMsg")
+    let passerrMsg=document.querySelector(".PasserrMsg")
+
+    btn.addEventListener("click",() => {
+        if (input.type==="password") {
+            input.type="text";
+            btn.innerHTML=`<i class="fa-solid fa-eye"></i>`
+            btn.style.color="blue";
+        }
+        else{
+            input.type="password";
+            btn.innerHTML=`<i class="fa-solid fa-eye-slash"></i>`
+        }
+    });
+   
+    submitBtn.addEventListener('click',()=>{
+        if(email.value===""){
+        emailerrMsg.innerHTML="Please Enter Email";
+        emailerrMsg.style.color="red";
+         email.style.border="red";
+         setTimeout( () => {
+            emailerrMsg.innerHTML='';
+         },2000)
+         return false;
+     }
+
+     else if(input.value==="" ){
+        passerrMsg.innerHTML="Please Enter password";
+         passerrMsg.style.color="red"
+         input.style.border="red"
+         console.log("Please Enter password");
+         return false;
+     }
+     else if(input.length<=8 ){
+        passerrMsg.innerHTML="Password must be greater than 8";
+        passerrMsg.style.color="red";
+         input.style.border="red";
+         console.log("Password must be greater than 8");
+         return false;
+     }
+     else{
+        console.log("first");
+        return true;
+     }
+     console.log(input)
+    });
+
+  
+
+</script>
+</html>

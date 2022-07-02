@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(233, 238, 206);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .question1{
+        padding: 0px 15px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+    .question2{
+        padding: 0px 15px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+    .question3{
+        padding: 0px 15px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+    
+    .fas{
+        padding-left: 5px;
+        cursor: pointer;
+    }
+    .ans1{
+        display: none;
+    }
+    .ans2{
+        display: none;
+    }
+    .ans3{
+        display: none;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="question1">
+            <h3 class="ques q1">What is the full form of HTMl<i class="q1 fa fa-chevron-circle-down"></i></h3>
+            <p class="ans1">HyperText MArkup Language</p>
+        </div>
+
+        <div class="question2">
+            <h3 class="ques 2">What is the full form of css<i class="q2 fa fa-chevron-circle-down"></i></h3>
+            <p class="ans2"> Cascading Style Sheets</p>
+        </div>
+
+        <div class="question3">
+            <h3 class="ques q3">What is the full form of js<i class=" fa fa-chevron-circle-down" id="fas"></i></h3>
+            <p class="ans3"> javaScript</p>
+        </div>
+    </div>
+
+    <script>
+       
+        let q1=document.querySelector('.q1');
+        let q2=document.querySelector('.q2');
+        let fas=document.querySelector('#fas');
+        let ans1=document.querySelector('.ans1');
+        let ans2=document.querySelector('.ans2');
+        let ans3=document.querySelector('.ans3');
+        // console.log(question);
+
+        fas.addEventListener('click',()=>{
+            fas.classList.toggle('fa-arrow-up');
+        })
+
+
+    
+       
+        
+    </script>
+</body>
+</html>

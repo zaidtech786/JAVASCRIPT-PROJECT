@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .img {
+      width: 100%;
+      height: 600px;
+    }
+    .icons {
+      position: absolute;
+      top: 570px;
+      text-align: center;
+      padding-left: 750px;
+    }
+    .fas {
+      padding: 0px 8px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .contents {
+      position: absolute;
+      top: 300px;
+      left: 300px;
+      color: blanchedalmond;
+      text-align: center;
+    }
+    .heading {
+      padding: 7px;
+      font-size: 3rem;
+    }
+    .para {
+      padding: 10px;
+      font-size: 1.5rem;
+    }
+    .btn {
+      padding: 10px 25px;
+
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      background-color: rgb(75, 204, 221);
+    }
+    .btn:hover {
+      background-color: transparent;
+      border: 1px solid purple;
+      color: white;
+    }
+    .btns{
+    margin: 0px 10px;
+    }
+  </style>
+  <body>
+    <div class="carousel">
+      <img src="" class="img" alt="" />
+      <div class="icons">
+        <button class="btns left"><i class="left fas fa-arrow-left"></i></button>
+        <button class="btns right"><i class="right fas fa-arrow-right"></i></button>
+      </div>
+      <div class="contents">
+        <h1 class="heading">Lorem, ipsum dolor.</h1>
+        <p class="para">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia
+          dolore eum architecto qui excepturi, est quo nobis dignissimos quis
+          incidunt, fugit aliquam non in illo.
+        </p>
+        <button class="btnLorem">LoremIpsum.</button>
+      </div>
+    </div>
+    bjkb
+
+    <script>
+      let images = [
+        {
+          img: "img1.jpeg",
+          heading: "Lorem, ipsum dolor.",
+          para: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia dolore eum architecto qui excepturi, est quo nobis dignissimos quis incidunt, fugit aliquam non in illo.",
+          btn: "loremIpsum",
+        },
+
+        {
+          img: "img2.jpeg",
+          heading: "Lorem, ipsum dolor.",
+          para: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia dolore eum architecto qui excepturi, est quo nobis dignissimos quis incidunt, fugit aliquam non in illo.",
+          btn: "loremIpsum",
+        },
+
+        {
+          img: "img3.jpeg",
+          heading: "Lorem, ipsum dolor.",
+          para: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia dolore eum architecto qui excepturi, est quo nobis dignissimos quis incidunt, fugit aliquam non in illo.",
+          btn: "loremIpsum",
+        },
+      ];
+
+      let img = document.querySelector(".img");
+      let rightBtn = document.querySelector(".right");
+      let leftBtn = document.querySelector(".left");
+      let heading = document.querySelector(".heading");
+      let para = document.querySelector(".para");
+      let btn = document.querySelector(".btn");
+      let btns = document.querySelectorAll(".btns");
+      console.log(btns);
+
+
+      let count = 0;
+      const loadImages = () => {
+        let load = images[count];
+        img.src = load.img;
+        heading.innerHTML = load.heading;
+        para.innerHTML = load.para;
+        btn.innerHTML = load.button;
+      };
+
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          let styles = e.target.classList;
+          console.log(styles);
+          if (styles.contains('right')) {
+            count++;
+            if (count > images.length - 1) {
+              count = 0;
+            }
+            loadImages();
+        }
+            else if(styles.contains('left')){
+                count--;
+          if (count<0) {
+              count=images.length-1;
+          }
+          loadImages();
+            }
+          
+        });
+      });
+
+      // rightBtn.addEventListener('click',() =>{
+      //     count++;
+      //     if (count>images.length-1) {
+      //         count=0;
+      //     }
+      //     loadImages();
+      // });
+
+      // leftBtn.addEventListener('click',() =>{
+      //     count--;
+      //     if (count<0) {
+      //         count=images.length-1;
+      //     }
+      //     loadImages();
+      // });
+    </script>
+  </body>
+</html>

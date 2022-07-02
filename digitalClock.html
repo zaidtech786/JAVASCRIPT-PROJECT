@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(212, 212, 174);
+        }
+        .hour{
+            padding: 0px 15px;
+            font-size: 20px;
+        }
+        .mint{
+            padding: 0px 15px;
+            font-size: 20px;
+        }
+        .sec{
+            padding: 0px 15px;
+            font-size: 20px;
+        }
+        .head{
+            position: absolute;
+            top: 250px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        <h1 class="head">Digital Clock</h1>
+        <span class="hour">0</span>
+        <span class="mint">0</span>
+        <span class="sec">0</span>
+    </div>
+    <script>
+        let hour=document.querySelector('.hour');
+        let mint=document.querySelector('.mint');
+        let sec=document.querySelector('.sec');
+
+        const digitalClock = () => {
+
+            let time = new Date();
+            let hours=time.getHours();
+            hour.innerHTML=hours;   //getting hours
+    
+            let minutes= time.getMinutes();
+            mint.innerHTML=minutes;  //getting minutes
+    
+            let seconds=time.getSeconds();
+            sec.innerHTML=seconds;
+            
+        }
+      
+        let event=setInterval(digitalClock,1000)
+        console.log(event);
+        </script>
+</body>
+</html>

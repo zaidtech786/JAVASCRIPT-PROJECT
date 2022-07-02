@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .area{
+            width: 700px ;
+            /* background-color: rgb(141, 14, 14); */
+        }
+        .textarea{
+            width: 600px;
+            height: 300px;
+            background-color: rgba(172, 214, 200, 0.856);
+            resize: none;
+        }
+        .Start{
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            padding:8px 30px ;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(138, 99, 190);
+            font-size:18px ;
+        }
+        .Start:hover{
+            border: 1px solid blueviolet;
+            background-color: transparent;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="area">
+        <h2 class="questions"></h2>
+        <textarea class="textarea" cols="10" rows="10"></textarea><br>
+        <button class="Start">Start</button>
+    </div>
+
+        <script>
+            let arr=["What is the full form of javascript","What is the full form of html" ,"My name is zaid siddiqui"];
+            //   console.log(arr[0]);
+            let textarea=document.querySelector('.textarea');
+            let btn=document.querySelector('.Start');
+            let questions=document.querySelector('.questions');
+            let startTime,endTime;
+
+            function play(){
+                let random=Math.floor(Math.random()*arr.length);
+                console.log(random)
+                let text=arr[random];
+                questions.innerHTML=text;              
+                let d=new Date();
+               startTime=d.getMinutes();
+                btn.innerText="Done";
+            }
+
+            function End(){
+                let date=new Date();
+                let endTime=date.getMinutes();
+                let totalTime=((endTime-startTime)/1000);
+                let userInput=textarea.value;
+                let count=countWords(userInput);
+                let speed=Math.round((count/totalTime)*60);
+                let result=`You typed total ${count} words with speed of ${speed} per minutes `;
+                console.log(speed);
+                result+=compareStrings(questions.innerHTML,userInput)
+                questions.innerHTML=result;
+            
+                btn.innerHTML="Start";
+            }
+
+            // Compare the userInput and given text
+            let compareStrings = (str1,str2) => {
+                let count=0;
+                let text1=str1.split(' ');
+                let text2=str2.split(' ');
+
+                text1.forEach(function (item,index){
+                    if (item==text2[index]) {
+                        count++;
+                    }
+                });
+                let errorWords=(text1.length-count);
+                    return `${count}  correct out of  ${text1.length} and total number of errors are ${errorWords}. `;        
+            }
+
+            // Counting the words written by the user
+                let countWords = (str) =>{
+                let response=str.split(' ').length;
+                console.log(response);
+                return response;
+            }
+
+
+
+            btn.addEventListener('click',() => {
+              if (btn.innerText=="Start") {
+                textarea.disabled=false;
+                play();
+              }
+              else if(btn.innerText=="Done"){
+                textarea.disabled=true;
+                End();
+              }
+            });
+
+        </script>
+</body>
+</html>
